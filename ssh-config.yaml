@@ -1,0 +1,18 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: Allows only sshusers group members have ssh access
+    lineinfile: dest=/etc/ssh/sshd_config
+                line="AllowGroups sshusers"
+                state=present
+  - name: Enable Banner
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      regexp: '^#Banner /etc/issue.net'
+      line: 'Banner /etc/issue.net'
+  - name: Create custom ssh login banner
+    lineinfile:
+      path: /etc/issue.net
+      regexp: '^Ubuntu 16.04.5 LTS'
+      line: 'PROPERTY OF ACME CO.'

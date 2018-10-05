@@ -1,0 +1,12 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: running updates on server
+    apt:
+      update-cache: yes
+  
+  - name: install nano
+    apt:
+      name: nano
+      state: installed    

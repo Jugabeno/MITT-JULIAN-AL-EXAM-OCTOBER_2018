@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: Install NGINX
+    apt: 
+      name: nginx
+      state: installed
+  - name: Enables ssl on the default site
+
