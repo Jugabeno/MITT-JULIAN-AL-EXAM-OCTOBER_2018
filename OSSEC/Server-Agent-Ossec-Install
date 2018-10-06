@@ -73,8 +73,6 @@ MDAxIFNlcnZlciAxOTIuMTY4LjI0OC4xMzEgZWVhNjJlYzA4MjdjYzdiN2VjZmZiZjBjNWFjNDQyZmY0
 
 Server:
 
-Desktop:
-
 sudo apt-get update
 
 sudo apt-get upgrade
